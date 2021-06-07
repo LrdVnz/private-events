@@ -2,8 +2,11 @@
 
 <ul>
 <% @events.each do |event| %>
-  
-  <li><%= event.event_date %></li>
-
+  <div>
+   <h3><%= event.title %></h3>
+   <h5><%= event.event_date %></h5>
+   <p><%=  event.user_id %></p>
+   <p> ------------- </p>
+  </div>
 <% end %>
 </ul>
