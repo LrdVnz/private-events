@@ -5,6 +5,8 @@
   <h2><%= @event.event_date %></h2>
   <h4><%= @event.creator_id %></h4>   
   <% @event.attendees.each do |attendee| %>
-     <%= attendee.email %>
+    <ul> 
+      <li><%= attendee.email %></li>
+    </ul>
   <% end %>
 </div>

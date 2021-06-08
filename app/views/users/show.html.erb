@@ -1,6 +1,6 @@
-<h1> This are <strong><%= @user.email %><strong>'s events</h1>
+<h1> This are <strong><%= @user.email %><strong> 's attended events</h1>
 
-<% @user.events.all.each do |event| %>
+<% @user.attended_event.all.each do |event| %>
       <ul>
        <li><%= event.title %></li>
        <li><%= event.event_date %></li>
