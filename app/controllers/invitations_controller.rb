@@ -1,6 +1,10 @@
 class InvitationsController < ApplicationController
     def new 
-       @invitation = Invitation.new
+      @invitation = Invitation.new
+    end
+
+    def show
+      @invitation = Invitation.find(params[:id])
     end
 
     def create
@@ -13,14 +17,10 @@ class InvitationsController < ApplicationController
       end 
     end
 
-    def show
-
-    end
-
     private
 
     def invitation_params
-
+     params.require(:invitation).permit(:event_id, :user_id)
     end
 
 end

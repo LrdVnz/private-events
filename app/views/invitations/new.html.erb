@@ -1,0 +1,19 @@
+<h1>Create a new invitation</h1>
+
+<%= form_with model: @invitation, method: :post do |form| %>   
+
+   <div>
+    <%= form.label :event_id, "Event_id" %><br>
+    <%= form.number_field :event_id %>
+   </div>
+
+   <div>
+    <%= form.label :user_id, "User_id" %><br>
+    <%= form.number_field :user_id %>
+   </div>
+
+   <div>
+     <%= form.submit "Submit" %>
+   </div>
+
+<% end %>
