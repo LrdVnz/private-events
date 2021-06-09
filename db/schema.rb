@@ -11,7 +11,6 @@
 # It's strongly recommended that you check this file into your version control system.
 
 ActiveRecord::Schema.define(version: 2021_06_08_112458) do
-
   create_table "events", force: :cascade do |t|
     t.date "event_date"
     t.datetime "created_at", precision: 6, null: false
