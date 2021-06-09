@@ -1,8 +1,31 @@
 <h1> This are <strong><%= @user.email %><strong> 's attended events</h1>
 
+<% future_events = @user.attended_event.all.where("event_date > ?", Date.current) %>
+
+<% past_events = @user.attended_event.all.where("event_date < ?", Date.current) %>
+
+<h3> Events that I will partecipate in: </h3>
+<% future_events.each do |event| %>
+   <ul>
+       <li><%= event.title %></li>
+       <li><%= event.event_date %></li>
+   </ul>
+<% end %> 
+
+
+<h3> Events that I already partecipated in: </h3>
+<% past_events.each do |event| %>
+   <ul>
+       <li><%= event.title %></li>
+       <li><%= event.event_date %></li>
+   </ul>
+<% end %> 
+
+<% if false %>
 <% @user.attended_event.all.each do |event| %>
       <ul>
        <li><%= event.title %></li>
        <li><%= event.event_date %></li>
       </ul>
-<% end %>
+<% end %> 
+<% end %> 
